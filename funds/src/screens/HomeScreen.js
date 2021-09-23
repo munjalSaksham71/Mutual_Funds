@@ -18,7 +18,7 @@ const HomeScreen = () => {
   }, [dispatch])
 
   return (
-    <div className="App">
+    <div className="App mt-5">
       <h1>Mutual Funds</h1>
       {(
         <Row>

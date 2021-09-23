@@ -35,3 +35,18 @@ h2 {
     border-bottom-left-radius: 1rem;
 }
   
+ul {
+    list-style: none;
+}
+
+.non-bullet {
+    list-style: none;
+    text-align: right;
+    padding-bottom: 10px;
+}
+  
+.list-item-inline {
+    display: inline;
+    padding: 2rem 1rem;
+}
+  
