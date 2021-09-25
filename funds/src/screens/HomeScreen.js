@@ -5,17 +5,23 @@ import Funds from '../components/Funds'
 import { listFunds } from '../actions/fundsActions'
 import '../App.css'
 
-const HomeScreen = () => {
+const HomeScreen = ({history}) => {
   const dispatch = useDispatch()
 
   const fundList = useSelector((state) => state.fundList);
   const { funds } = fundList;
 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
   const slicedFund = funds.slice(0,5);
 
   useEffect(() => {
+    if(!userInfo){
+      history.push('/login');
+    }
     dispatch(listFunds())
-  }, [dispatch])
+  }, [dispatch, userInfo, history])
 
   return (
     <div className="App mt-5">

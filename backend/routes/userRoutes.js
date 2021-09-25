@@ -4,7 +4,7 @@ import {authUser, registerUser, getUserProfile, updateUserProfile} from '../cont
 import {protect} from '../middleware/authMiddleware.js'
 
 router.route("/").post(registerUser);
-router.post("/login", authUser);
+router.route("/login").post(authUser);
 router
   .route("/profile")
   .get(protect, getUserProfile)

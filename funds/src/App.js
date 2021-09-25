@@ -6,6 +6,8 @@ import FundDetailScreen from './screens/FundDetailScreen';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Header />
       <Switch className="py-3">
         <Container>
+          <Route path="/profile" component={ProfileScreen} />
+          <Route path="/register" component={RegisterScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/fund/:id?" component={FundDetailScreen} />
           <Route path="/" component={HomeScreen} exact />
