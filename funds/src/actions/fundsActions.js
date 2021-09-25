@@ -21,11 +21,11 @@ export const listFunds = () => async (dispatch) => {
     }
   };
 
-  export const listFundDetails = (secretCode) => async (dispatch) => {
+  export const listFundDetails = (id) => async (dispatch) => {
     try {
       dispatch({ type: FUND_DETAILS_REQUEST });
   
-      const { data } = await axios.get(`https://api.mfapi.in/mf/${secretCode}`);
+      const { data } = await axios.get(`https://api.mfapi.in/mf/${id}`);
       dispatch({
         type: FUND_DETAILS_SUCCESS,
         payload: data,

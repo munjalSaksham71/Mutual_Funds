@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Funds from '../components/Funds'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 import { listFunds, searchFunds } from '../actions/fundsActions'
 import '../App.css'
 
@@ -10,15 +12,13 @@ const HomeScreen = ({history, match}) => {
   const dispatch = useDispatch()
 
   const fundList = useSelector((state) => state.fundList);
-  const { funds } = fundList;
+  const { loading, error, funds } = fundList;
 
   const fundSearchList = useSelector((state) => state.fundSearchList)
   const  fundSearch  = fundSearchList
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
-
-  console.log(fundSearch);
 
   const slicedFund = funds.slice(0,5);
 
@@ -36,6 +36,8 @@ const HomeScreen = ({history, match}) => {
   return (
     <div className="App mt-5">
       <h1>Mutual Funds</h1>
+      {loading && <Loader />}
+      {error && <Message variant='danger'>{error}</Message>}
       { keyword ? (
         <Row>
           {fundSearch.funds.map((item) => (

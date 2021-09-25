@@ -14,16 +14,16 @@ export const fundListReducer = (state = { funds: [] }, action) => {
   };
 
   export const fundDetailsReducer = (
-    state = { fund: { } },
+    state = { fund: [] },
     action
   ) => {
     switch (action.type) {
       case FUND_DETAILS_REQUEST:
-        return { ...state };
+        return { loading: true, ...state };
       case FUND_DETAILS_SUCCESS:
-        return { fund: action.payload };
+        return { loading: false, fund: action.payload };
       case FUND_DETAILS_FAIL:
-        return {error: action.payload };
+        return { loading: false, error: action.payload };
       default:
         return state;
     }
