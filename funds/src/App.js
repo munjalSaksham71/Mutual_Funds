@@ -19,6 +19,7 @@ function App() {
           <Route path="/register" component={RegisterScreen} />
           <Route path="/login" component={LoginScreen} />
           <Route path="/fund/:id?" component={FundDetailScreen} />
+          <Route path="/search/:keyword" component={HomeScreen}/>
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </Switch>
