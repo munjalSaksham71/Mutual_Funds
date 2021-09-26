@@ -35,7 +35,7 @@ const registerUser = asynchandler(async (req,res) => {
     const userExists = await User.findOne({ email });
 
     if(userExists){
-        res.status(400);
+        res.status(403).send({"message":"Email Already Exists"});
         throw new Error('Email already registered');
     }
 

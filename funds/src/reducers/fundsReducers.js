@@ -14,7 +14,7 @@ export const fundListReducer = (state = { funds: [] }, action) => {
   };
 
   export const fundDetailsReducer = (
-    state = { fund: [] },
+    state = {},
     action
   ) => {
     switch (action.type) {

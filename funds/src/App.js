@@ -13,7 +13,7 @@ function App() {
   return (
      <Router>
       <Header />
-      <Switch className="py-3">
+      <Switch>
         <Container>
           <Route path="/profile" component={ProfileScreen} />
           <Route path="/register" component={RegisterScreen} />
