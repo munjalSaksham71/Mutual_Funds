@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { Form, Button } from 'react-bootstrap'
 
 const SearchBox = ({ history }) => {
@@ -11,6 +11,7 @@ const SearchBox = ({ history }) => {
     } else {
       history.push('/')
     }
+    setKeyword('')
   }
 
   return (
@@ -21,7 +22,7 @@ const SearchBox = ({ history }) => {
         onChange={(e) => setKeyword(e.target.value)}
         placeholder='Search Funds...'
         className='mr-sm-2 ml-sm-5'
-        autoComplete="on"
+        autoComplete='on'
       ></Form.Control>
       <Button type='submit' variant='outline-success' className='p-2'>
         Search
